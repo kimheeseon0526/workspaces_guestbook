@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <th:block th:replace="~{/layout/index :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+      <h1 class="my-3">Guestbook Register Page</h1>
+      <form th:action="@{/guestbook/register}" method="post">
+
+          <div class="form-group">
+            <label for="content">title</label>
+            <textarea class="form-control" id="title" name="title" placeholder="Title"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="content">content</label>
+            <textarea class="form-control" id="content" name="content" placeholder="Content"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="writer">writer</label>
+            <textarea class="form-control" id="writer" name="writer" placeholder="Writer"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </th:block>
+  </th:block>
+</html>

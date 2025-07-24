@@ -1,6 +1,8 @@
 package com.levelupseon.guestbook.service;
 
 import com.levelupseon.guestbook.dto.GuestbookDTO;
+import com.levelupseon.guestbook.dto.PageRequestDTO;
+import com.levelupseon.guestbook.dto.PageResponseDTO;
 import com.levelupseon.guestbook.entity.Guestbook;
 
 import java.util.List;
@@ -10,8 +12,10 @@ public interface GuestbookService {
   Long write(GuestbookDTO guestbookDTO);
   GuestbookDTO read(Long gno);
   List<GuestbookDTO> readAll();
-  int modify(GuestbookDTO guestbookDTO);
-  int remove(Long gno);
+
+  PageResponseDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO pageRequestDTO);
+  void modify(GuestbookDTO guestbookDTO);
+  void remove(Long gno);
 
 
   default Guestbook toEntity(GuestbookDTO guestbookDTO){
@@ -24,7 +28,7 @@ public interface GuestbookService {
   }
 
   default GuestbookDTO toDto(Guestbook  guestbook){
-    return GuestbookDTO.builder()
+    return guestbook == null ? null : GuestbookDTO.builder()
             .gno(guestbook.getGno())
             .title(guestbook.getTitle())
             .content(guestbook.getContent())

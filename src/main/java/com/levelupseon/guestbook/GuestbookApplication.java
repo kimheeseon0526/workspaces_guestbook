@@ -16,5 +16,4 @@ public class GuestbookApplication {
     SpringApplication.run(GuestbookApplication.class, args);
     log.info("GuestbookApplication started");
   }
-
 }
