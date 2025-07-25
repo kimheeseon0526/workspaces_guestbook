@@ -46,6 +46,7 @@ public class GuestbookController {
 //    model.addAttribute("dto", dto);
 //    model.addAttribute("pageDto", pageDto);
     model.addAttribute("dto", service.read(gno));
+//    model.addAttribute("requestDto", pageDto);
 
   }
   @GetMapping("modify")
@@ -54,6 +55,7 @@ public class GuestbookController {
 //    model.addAttribute("dto", dto);
 //    model.addAttribute("pageDto", pageDto);
     model.addAttribute("dto", service.read(gno));
+
   }
 
   @PostMapping("modify")

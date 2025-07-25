@@ -32,8 +32,8 @@
     </div>
 <!--    <a th:href="@{/guestbook/modify(page = ${pageDto.page}, size = ${pageDto.size}, gno = ${pageDto.gno})}" class="btn btn-primary mt-3">modify</a>-->
 <!--    <a th:href="@{/guestbook/list(page = ${pageDto.page}, size = ${pageDto.size})}" class="btn btn-primary mt-3">List</a>-->
-      <a th:href="@{/guestbook/modify(page = ${pageDto.page}, size = ${pageDto.size}, gno = ${dto.gno})}" class="btn btn-primary mt-3">modify</a>
-      <a th:href="@{/guestbook/list(page = ${pageDto.page}, size = ${pageDto.size})}" class="btn btn-primary mt-3">List</a>
+      <a th:href="@{/guestbook/modify(page = ${pageDto.page}, size = ${pageDto.size}, gno= ${dto.gno}, type=${pageDto.type}, keyword=${pageDto.keyword})}" class="btn btn-primary mt-3">modify</a>
+      <a th:href="@{/guestbook/list(page = ${pageDto.page}, size = ${pageDto.size}, type=${pageDto.type}, keyword=${pageDto.keyword})}" class="btn btn-primary mt-3">List</a>
   </form>
   </th:block>
 </th:block>

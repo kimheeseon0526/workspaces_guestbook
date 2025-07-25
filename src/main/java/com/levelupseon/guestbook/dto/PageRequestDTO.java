@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Builder
 @AllArgsConstructor
@@ -23,5 +24,24 @@ public class PageRequestDTO {
 
   public Pageable getPageable(Sort sort) {
     return PageRequest.of(page -1, size, sort);
+  }
+  public String getQs() {
+    //fromPath : 목록에서 사용
+    UriComponentsBuilder builder = UriComponentsBuilder.fromPath("");
+    builder.queryParam("size", size);
+//    builder.queryParam("page", page);
+    builder.queryParam("type", type);
+    builder.queryParam("keyword", keyword);
+    return builder.build().toUriString();
+  }
+
+  public String getQs2() {
+    //fromPath : 목록에서 사용
+    UriComponentsBuilder builder = UriComponentsBuilder.fromPath("");
+    builder.queryParam("size", size);
+    builder.queryParam("page", page);
+    builder.queryParam("type", type);
+    builder.queryParam("keyword", keyword);
+    return builder.build().toUriString();
   }
 }

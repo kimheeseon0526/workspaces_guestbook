@@ -31,9 +31,12 @@
 
       <input type="hidden" name="page" th:value="${pageDto.page}" />
       <input type="hidden" name="size" th:value="${pageDto.size}" />
-      <button type="submit" class="btn btn-primary" onclick="return confirm('수정할거?')">Modify</button>
-      <a th:href="@{/guestbook/list(page = ${pageDto.page}, size = ${pageDto.size})}" class="btn btn-primary">List</a>
-      <button type="submit" class="btn btn-danger" formaction="remove">Remove</button>
+      <input type="hidden" name="type" th:value="${requestDto.type}" />
+      <input type="hidden" name="keyword" th:value="${requestDto.keyword}" />
+
+      <button type="submit" class="btn btn-primary" onclick="return confirm('수정 ㄱ?')">Modify</button>
+      <a th:href="@{/guestbook/list(page = ${pageDto.page}, size = ${pageDto.size}, type=${requestDto.type}, keyword= ${requestDto.keyword})}" class="btn btn-primary">List</a>
+      <button type="submit" class="btn btn-danger" formaction="remove" onclick="const result = confirm('삭제 ㄱ?'); if(result) {document.querySelector('[name=page]').value = 1;} return result;">Remove</button>
     </form>
   </th:block>
 </th:block>
